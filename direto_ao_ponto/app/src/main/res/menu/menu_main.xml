@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/itemSearch"
+        android:icon="@drawable/ic_search_black_24dp"
+        android:title="Search"
+        android:visible="false"
+        app:actionViewClass="android.widget.SearchView"
+        app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/itemUsuarios"
+        android:title="Usuários" />
+    <item
+        android:id="@+id/itemConfig"
+        android:title="Configurações" />
+    <item
+        android:id="@+id/itemSair"
+        android:icon="@android:drawable/ic_lock_power_off"
+        android:menuCategory="system"
+        android:title="Sair" />
+</menu>

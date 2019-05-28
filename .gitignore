@@ -1,6 +1,7 @@
 *.iml
-.gradle
-/local.properties
+/.idea
+/direto_ao_ponto/.gradle
+/direto_ao_ponto/local.properties
 /.idea/caches
 /.idea/libraries
 /.idea/modules.xml
@@ -8,6 +9,6 @@
 /.idea/navEditor.xml
 /.idea/assetWizardSettings.xml
 .DS_Store
-/build
-/captures
+/direto_ao_ponto/build
+/direto_ao_ponto/captures
 .externalNativeBuild
