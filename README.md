@@ -1,8 +1,11 @@
 # Direto ao Ponto
 
 **Disciplina:**  Programação para Dispositivos Móveis
+
 **Integrantes**  [Deivid Francis](https://github.com/DeividFrancis), [Itamar Alves](https://github.com/ItamarAlves), [Igor Almeida](https://github.com/IgorAlmeidabrt), [Bruno Rocha](https://http.cat/404)
+
 **Tema:** Controle de ponto
+
 **Entrega:** 03/06/2019
 
 ***
