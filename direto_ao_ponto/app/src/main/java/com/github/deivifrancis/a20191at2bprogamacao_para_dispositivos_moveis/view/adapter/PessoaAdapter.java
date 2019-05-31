@@ -10,12 +10,14 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.github.deivifrancis.a20191at2bprogamacao_para_dispositivos_moveis.R;
 import com.github.deivifrancis.a20191at2bprogamacao_para_dispositivos_moveis.modal.bean.PapelBean;
 import com.github.deivifrancis.a20191at2bprogamacao_para_dispositivos_moveis.modal.bean.PessoaBean;
 import com.github.deivifrancis.a20191at2bprogamacao_para_dispositivos_moveis.modal.bean.PessoaPapelBean;
 import com.github.deivifrancis.a20191at2bprogamacao_para_dispositivos_moveis.utils.OsUtils;
+import com.github.deivifrancis.a20191at2bprogamacao_para_dispositivos_moveis.utils.StringUtils;
 import com.github.deivifrancis.a20191at2bprogamacao_para_dispositivos_moveis.view.CadastroActivity;
 import com.github.deivifrancis.a20191at2bprogamacao_para_dispositivos_moveis.view.Dashboard2Activity;
 
@@ -33,9 +35,14 @@ public class PessoaAdapter extends RecyclerView.Adapter<PessoaAdapter.PessoaView
         this.pessoaList = new ArrayList<>();
         this.papelList = new ArrayList<>();
 
-        for(PessoaPapelBean pessoaPapelBean: pessoaPapelList){
-            pessoaList.add(pessoaPapelBean.getPessoaBean());
-            papelList.add(pessoaPapelBean.getPapelBean());
+        try {
+            for(PessoaPapelBean pessoaPapelBean: pessoaPapelList){
+                pessoaList.add(pessoaPapelBean.getPessoaBean());
+                papelList.add(pessoaPapelBean.getPapelBean());
+            }
+        }catch(Exception e){
+            Toast.makeText(null, e.getMessage(), Toast.LENGTH_LONG).show();
+            e.printStackTrace();
         }
     }
 
@@ -59,7 +66,8 @@ public class PessoaAdapter extends RecyclerView.Adapter<PessoaAdapter.PessoaView
             PessoaBean pessoaBean = pessoaList.get(i);
             PapelBean papelBean = papelList.get(i);
 
-            String nome = pessoaBean.getNome();
+            String nome = StringUtils.naoTemValor(pessoaBean.getNome())? "Guest" : pessoaBean.getNome();
+
             String firstLetter = nome.substring(0,1).toUpperCase();
 
             pessoaViewHolder.getTxtNome().setText(nome);
